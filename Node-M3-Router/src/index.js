@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
         fs.createReadStream(process.cwd() + req.url).pipe(res)
     } else {
         let handle = router[urlPath];
-        console.log(999999999999,handle,router)
+        // console.log(handle,router)
         if (handle === undefined) {
             handle = router['/err'];
         }
