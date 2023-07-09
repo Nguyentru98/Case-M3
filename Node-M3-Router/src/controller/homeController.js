@@ -25,7 +25,7 @@ class HomeController {
                                         </span>
                                     </div>
                                     <input name="productId" type="hidden" value="${product.id}"/>
-                                    <div class="col-12 mb-3 align-self-end">
+                                    <div class="delete-edit">
                                         <button class="btn btn-outline-dark" type="submit" onclick="addToCart(${product.id})">
                                         <i class="fas fa-cart-plus me-2"></i>Add to cart</button>
                                     </div>
@@ -40,12 +40,8 @@ class HomeController {
             })
         })
     }
-    showadmin(req, res) {
-        fs.readFile('view/product/admin.html', 'utf-8', (err, stringHTML) => {
-            res.write(stringHTML);
-            res.end();
-        })
-    }
+
+    
     showErr(req, res) {
         fs.readFile('view/err.html', 'utf-8', (err, stringHTML) => {
             res.write(stringHTML);

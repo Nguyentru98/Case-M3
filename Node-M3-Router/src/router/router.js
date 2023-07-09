@@ -7,7 +7,7 @@ import cartRouter from './cartRouter.js';
 let router = {
     '/': homeController.showIndex,
     '/err': homeController.showErr,
-    '/admin': homeController.showadmin,
+
 }
 router = {...router, ...productRouter, ...cartRouter};
 router = {...router, ...userRouter};

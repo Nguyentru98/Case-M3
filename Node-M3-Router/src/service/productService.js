@@ -25,7 +25,7 @@ class ProductService {
                 if (err) {
                     reject(err)
                 } else {
-                    console.log('tao thanh cong')       
+                    console.log('them thanh cong')       
                     resolve(data)
                 }
             })
@@ -34,7 +34,7 @@ class ProductService {
     }
     update(product) {
             return new Promise((resolve, reject) => {
-                connection.getConnection().query(`UPDATE product SET name = '${product.name}', price = ${product.price}, quantity = '${product.quantity}', image = '${product.image}' WHERE id = ${product.id}`, (err, products) => {
+                connection.getConnection().query(`UPDATE products SET name = '${product.name}', price = ${product.price}, quantity = '${product.quantity}', image = '${product.image}' WHERE (id = '${product.id}')`, (err, products) => {
                     if (err) {
                         reject(err)
                     } else {
@@ -44,7 +44,6 @@ class ProductService {
                 })          
             })
         }
-
     deleteId(id) {
         return new Promise((resolve, reject) => {
             connection.getConnection().query(`DELETE FROM product WHERE id = ${id} `, (err, products) => {
@@ -60,7 +59,7 @@ class ProductService {
     
     findById(id) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`select * from product where id = ${id}`, (err, products) => {
+            connection.getConnection().query(`select * from products where id = ${id}`, (err, products) => {
                 if (err) {
                     reject(err)
                 } else {
