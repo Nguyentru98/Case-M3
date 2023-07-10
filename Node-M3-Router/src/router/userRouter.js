@@ -3,7 +3,8 @@ import userController from "../controller/userController.js";
 
 let userRouter = {
     '/users': userController.showAll,
-    '/add-user': userController.showFormAdd,
+    '/add-cart': userController.addCart,
+    '/show-cart': userController.showCart,
 }
 
 export default userRouter;

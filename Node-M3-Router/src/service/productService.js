@@ -46,7 +46,7 @@ class ProductService {
         }
     deleteId(id) {
         return new Promise((resolve, reject) => {
-            connection.getConnection().query(`DELETE FROM product WHERE id = ${id} `, (err, products) => {
+            connection.getConnection().query(`DELETE FROM products WHERE id = ${id} `, (err, products) => {
                 if (err) {
                     reject(err)
                 } else {

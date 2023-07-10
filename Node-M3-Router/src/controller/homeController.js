@@ -25,7 +25,7 @@ class HomeController {
                                         </span>
                                     </div>
                                     <input name="productId" type="hidden" value="${product.id}"/>
-                                    <div class="delete-edit">
+                                    <div class="col-12 mb-3 align-self-end">
                                         <button class="btn btn-outline-dark" type="submit" onclick="addToCart(${product.id})">
                                         <i class="fas fa-cart-plus me-2"></i>Add to cart</button>
                                     </div>

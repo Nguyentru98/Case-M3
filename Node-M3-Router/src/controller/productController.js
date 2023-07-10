@@ -30,7 +30,7 @@ class ProductController {
         })
         req.on('end', () => {
             let urlObject = url.parse(req.url, true)
-            console.log(req.method);
+            // console.log(req.method);
             if (req.method == 'GET') {
                 fs.readFile('view/product/edit.html', 'utf-8', (err, stringHTML) => {
                     productService.findById(urlObject.query.idEdit).then((product) => {
@@ -60,6 +60,14 @@ class ProductController {
         })
     }
 
+    delete(req, res) {
+        let urlObject = url.parse(req.url, true)
+        console.log(urlObject);
+                productService.deleteId(urlObject.query.idDelete).then(() => {    
+                    res.writeHead(301, {'location': '/products'});
+                    res.end()
+                });
+}
 
 }
 
