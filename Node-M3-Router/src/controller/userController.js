@@ -1,5 +1,6 @@
 import fs from "fs";
-import qs from "qs"
+import qs from "qs";
+import url from "url"
 import userService from "../service/userService.js";
 
 
@@ -49,10 +50,9 @@ class UserController {
             let str = '';
             let totalPrice = 0;
             userService.showAll().then((carts)=> {
-                console.log(carts);
                 for (const cart of carts) {
                 totalPrice += cart.price * cart.quantity;
-                   str += `                                            <tr>
+                   str += `<tr>
                         <td>
                             <img src="${cart.image}" class="img-fluid">
                             ${cart.name}
@@ -67,7 +67,7 @@ class UserController {
                             ${cart.price}$
                         </td>
                         <td>
-                            <button class="btn btn-link text-danger"><i class="fas fa-times"></i></button>
+                        <a href="/delete-cart?idDelete=${cart.id}"><button class="btn btn-link text-danger"><i class="fas fa-times"></i></button> </a>
                         </td>
                     </tr>`
                 }
@@ -77,6 +77,14 @@ class UserController {
                 res.end();
             })
         })
+    }
+    deleteCart(req, res) {
+        let urlObject = url.parse(req.url, true)
+        console.log(urlObject);
+                userService.deleteId(urlObject.query.idDelete).then(() => {    
+                    res.writeHead(301, {'location': '/show-cart'});
+                    res.end()
+                });
     }
 }
 function showList(req, res) {

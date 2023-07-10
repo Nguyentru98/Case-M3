@@ -62,7 +62,6 @@ class ProductController {
 
     delete(req, res) {
         let urlObject = url.parse(req.url, true)
-        console.log(urlObject);
                 productService.deleteId(urlObject.query.idDelete).then(() => {    
                     res.writeHead(301, {'location': '/products'});
                     res.end()

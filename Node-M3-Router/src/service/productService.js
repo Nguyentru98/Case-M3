@@ -12,7 +12,6 @@ class ProductService {
                 if (err) {
                     reject(err)
                 } else {
-                    // console.log(products)
                     resolve(products)
                 }
             })

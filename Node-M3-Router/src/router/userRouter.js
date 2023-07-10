@@ -5,6 +5,7 @@ let userRouter = {
     '/users': userController.showAll,
     '/add-cart': userController.addCart,
     '/show-cart': userController.showCart,
+    '/delete-cart': userController.deleteCart,
 }
 
 export default userRouter;
