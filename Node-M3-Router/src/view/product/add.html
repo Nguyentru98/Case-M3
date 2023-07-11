@@ -5,16 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/">Trang chủ</a>
-<a href="/products">Danh sách sản phẩm</a>
 <h2>Thêm mới sản phẩm</h2>
 <form action="/products" method="post">
+    <table>
+        <tr>
+            <th>name products</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>image</th>
+        </tr>
+        <tr>
+            <td><input type="text" name="name"><br></td>
+            <td><input type="text" name="price"><br></td>
+            <td><input type="text" name="quantity"><br></td>
+            <td><input type="text" name="image"></td>
+            <td><button>Add</button></td>
+        </tr>
+    </table>
     <!-- <input type="text" name="id"> -->
-    <input type="text" name="name">
-    <input type="text" name="price">
-    <input type="text" name="quantity">
-    <input type="text" name="image">
-    <button>Add</button>
+    
 </form>
 </body>
 </html>

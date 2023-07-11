@@ -86,7 +86,76 @@ class UserController {
                     res.end()
                 });
     }
-}
+
+    // signUp(req,res){
+    //     let data = '';
+    //     fs.readFile('view/user/signUp.html','utf-8',(err,stringHtML)=>{
+    //         if (req.method === 'GET'){
+    //             res.write(stringHtML);
+    //             res.end();
+    //         }else {
+    //             req.on('data',dataRaw =>{
+    //                 data += dataRaw;
+    //             })
+    //             req.on('end',()=>{
+    //                 data = qs.parse(data)
+    //                 userService.signUp(data).then(()=>{
+    //                     res.writeHead(301,{Location:'/sign-in'})
+    //                     res.end();
+    //                 }).catch((err)=>{
+    //                     console.log(1)
+    //                     fs.readFile('./view/user/signUp.html','utf-8',(err,stringHTML)=>{
+    //                         stringHTML = stringHTML.replace('<h1 style="display: none">{err}</h1>', '<h1>Tai khoan da ton tai</h1>');
+    //                         res.write(stringHTML);
+    //                         res.end();
+    //                     })
+    //                 })
+    //             })
+    //         }
+    //     })
+    // }
+
+    // signIn(req, res) {
+    //     let data = ''
+    //     req.on('data', dataRaw => {
+    //         data += dataRaw
+    //     })
+    //     req.on('end', () => {
+    //         if (req.method === 'GET') {
+    //             fs.readFile('view/user/signIn.html', 'utf-8', (err, stringHTML) => {
+    //                 res.write(stringHTML);
+    //                 res.end();
+    //             })
+    //         } else {
+    //             data = qs.parse(data)
+    //             userService.signIn(data).then((result) => {
+    //                 if (result.length !== 0) {
+    //                     if (result[0].userName === 'admin') {
+    //                         fs.readFile('./view/product/list.html', 'utf-8', (err, stringHTML) => {
+    //                             res.write(stringHTML);
+    //                             res.end();
+    //                         })
+                            // res.writeHead(301, {Location: '/'})
+                            // res.end();
+                        // } else {
+                            // showList(req, res)
+                            // fs.readFile('./view/user/list.html', 'utf-8', (err, stringHTML) => {
+                            //     res.write(stringHTML);
+                            //     res.end();
+                            // })
+                        }
+//                     }else {
+//                         fs.readFile('./view/user/signIn.html','utf-8',(err,stringHTML)=>{
+//                             stringHTML = stringHTML.replace('<h1 style="display: none">{err}</h1>','<h1>Sai thong tin dang nhap</h1>')
+//                             res.write(stringHTML);
+//                             res.end();
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+//     }
+// }
 function showList(req, res) {
     fs.readFile('view/user/list.html', 'utf-8', (err, stringHTML) => {
         let str = '';

@@ -93,8 +93,8 @@ function showList(req, res) {
                             </div>
                             <input name="productId" type="hidden" value="${product.id}"/>
                             <div class="delete-edit">
-                                <a href="/edit-product?idEdit=${product.id}"><button>Edit</button></a>
-                                <a href="/delete-product?idDelete=${product.id}"><button>delete</button></a>                            
+                                <a href="/edit-product?idEdit=${product.id}"><button class="btn btn-outline-dark">Edit</button></a>
+                                <a href="/delete-product?idDelete=${product.id}"><button class="btn btn-outline-dark">delete</button></a>                            
                             </div>
                         </div>
                     </div> 

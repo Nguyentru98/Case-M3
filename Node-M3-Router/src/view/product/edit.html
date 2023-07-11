@@ -7,12 +7,23 @@
 <body>
 <h2>Edit product</h2>
 <form action="/edit-product" method="post">
-    <input type="hidden" name="id" value="{id}">
-    <input type="text" name="name" value="{name}">
-    <input type="text" name="price" value="{price}">
-    <input type="text" name="quantity" value="{quantity}">
-    <input type="text" name="image" value="{image}">
-    <button>Save</button>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>name products</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>image</th>
+        </tr>
+        <tr>
+            <td><input type="hidden" name="id" value="{id}"></td>
+            <td><input type="text" name="name" value="{name}"></td>
+            <td><input type="text" name="price" value="{price}"></td>
+            <td><input type="text" name="quantity" value="{quantity}"></td>
+            <td><input type="text" name="image" value="{image}"></td>
+            <td><button>Save</button></td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

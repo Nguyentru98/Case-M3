@@ -56,6 +56,30 @@ class UserService {
             })          
         })
     }
+
+    signUp(user){
+        return new Promise((resolve,reject)=>{
+            connection.getConnection().query(`INSERT INTO users (\`userName\`, \`passWord\`) VALUES ('${user.username}','${user.password}')`,(err,data)=>{
+                if (err){
+                    console.log(err)
+                    reject(err)
+                }else {
+                    resolve(data)
+                }
+            })
+        })
+    }
+    signIn(user){
+        return new Promise((resolve,reject)=>{
+            connection.getConnection().query(`select * from users where userName = '${user.username}' and passWord = '${user.password}'`,(err,data)=>{
+                if (err){
+                    reject(err)
+                }else {
+                    resolve(data)
+                }
+            })
+        })
+    }
 }
 
 

@@ -6,6 +6,8 @@ import homeController from "../controller/homeController.js";
 
 let router = {
     '/': homeController.showIndex,
+    '/Increase': homeController.showPriceIncrease,
+    '/Reduced': homeController.showPriceReduced,
     '/err': homeController.showErr,
 
 }
